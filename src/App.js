@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Billie Pratama
+          Testing aja sih 
         </a>
       </header>
     </div>
