@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import homePage from "./component/homePage";
+import addCustomer from "./component/addCustomer";
+import editCustomer from "./component/editCustomer";
+import NavBar from "./component/NavBar";
+import searchPage from "./component/searchPage";
+class App extends Component {
+  render(){
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Testing aja sih 
-        </a>
-      </header>
+        <Router>
+          <NavBar />
+              <Switch>
+                  <Route path="/" exact component={homePage} />
+                  <Route path="/addCustomer" exact component={addCustomer} />
+                  <Route path="/editCustomer" exact component={editCustomer} />
+                  <Route path="/searchPage" exact component={searchPage} />
+              </Switch>
+        </Router>
     </div>
   );
 }
-
+}
 export default App;
